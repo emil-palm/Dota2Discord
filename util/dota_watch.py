@@ -22,6 +22,5 @@ class DotaWatch(threading.Thread):
                                     if callable(self.callback):
                                         self.callback(match)
                 except Exception as e:
-                    raise e
                     pass
             time.sleep(10)
