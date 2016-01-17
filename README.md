@@ -17,7 +17,7 @@ It will be polling the STEAMAPI every 10 seconds asking for new Dota2 games play
 ### Setup
 Create a file called evilbot.json in the cloned repository.
 With the following content
-<pre>
+```json
 {
        "steam": {
                     "apikey" : "XXXXX"
@@ -30,9 +30,9 @@ With the following content
                     "admins" : [ "yourdiscordnick" ]
         }
 }
-</pre>
+```
 
-run
-<pre>
+run:
+```bash
 pip install -r requirements.txt
-</pre>
+```
