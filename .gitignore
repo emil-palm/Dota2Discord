@@ -1,0 +1,6 @@
+*.json
+*.cache
+*.pyc
+.*.sw*
+*.pickle
+temp/

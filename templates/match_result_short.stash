@@ -1,0 +1,14 @@
+***This just in; {{result.outcome}} a {{result.lobby_type}} match playing {{result.game_mode}}***
+Ended: {{result.end_time}}
+MVP: {{#result.mvp}} {{> player }} {{/result.mvp}}
+Dotabuff: http://dotabuff.com/matches/{{result.match_id}}
+**Radient:**
+{{#result.radiant_team}}
+{{> player}}
+{{/result.radiant_team}}
+**Dire:**
+{{#result.dire_team}}
+{{> player}}
+{{/result.dire_team}}
+
+

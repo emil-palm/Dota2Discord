@@ -1,0 +1,6 @@
+{{#is_discord}}
+{{player_name}} ({{discord_mention}}) - {{hero.localized_name}} - {{kills}}/{{deaths}}/{{assists}}
+{{/is_discord}}
+{{^is_discord}}
+{{player_name}} - {{hero.localized_name}} - {{kills}}/{{deaths}}/{{assists}} 
+{{/is_discord}}
