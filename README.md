@@ -4,6 +4,9 @@ This is a basic structure for a Discord bot, it currently serves Dota2 match inf
 
 It will be polling the STEAMAPI every 10 seconds asking for new Dota2 games played on the accounts registered, might give you some grief from the API team though.
 
+### How it looks
+![Output](https://raw.githubusercontent.com/mrevilme/Dota2Discord/master/github/discord.png)
+
 ### Since this is a work in progress im going to write the down commands below
 
 * !register STEAMNAME/STEAMID - Registers a steam account to the sending users discord id
