@@ -1,0 +1,4 @@
+*** Top5 most addicted players ***
+{{#.}}
+{{index}} - {{name}} - {{count}}
+{{/.}}

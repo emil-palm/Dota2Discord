@@ -3,7 +3,11 @@ from bot.bot import Bot
 
 import plugins.steam
 import plugins.match_history
+import plugins.stats
 
 Config(cls=JSONConfig,filename="evilbot.json")
 bot = Bot()
-bot.client.run()
+try:
+    bot.client.run()
+except Exception:
+    pass

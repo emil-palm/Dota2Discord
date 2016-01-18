@@ -39,79 +39,86 @@ class DotaResult(Model):
     @property
     def game_mode(self):
         _gm = self._game_mode
-        if _gm == 0:
-            return "None"
-        elif _gm == 1:
-            return "All Pick"
-        elif _gm == 2:
-            return "Captain's Mode"
-        elif _gm == 3:
-            return "Random Draft"
-        elif _gm == 4:
-            return "Single Draft"
-        elif _gm == 5:
-            return "All Random"
-        elif _gm == 6:
-            return "Intro"
-        elif _gm == 7:
-            return "Diretide"
-        elif _gm == 8:
-            return "Reverse Captain's Mode"
-        elif _gm == 9:
-            return "The Greevliling"
-        elif _gm == 10:
-            return "Tutorial"
-        elif _gm == 11:
-            return "Mid Only"
-        elif _gm == 12:
-            return "Least Played"
-        elif _gm == 13:
-            return "New Player Pool"
-        elif _gm == 14:
-            return "Compendium Matchmaking"
-        elif _gm == 15:
-            return "Custom"
-        elif _gm == 16:
-            return "Captain's Draft"
-        elif _gm == 17:
-            return "Balanced Draft"
-        elif _gm == 18:
-            return "Ability Draft"
-        elif _gm == 19:
-            return "?? EVENT ??"
-        elif _gm == 20:
-            return "All Random Death Match"
-        elif _gm == 21:
-            return "1 vs 1 Solo Mid"
-        elif _gm == 22:
-            return "All Pick"
+        if isinstance(_gm, int):
+            if _gm == 0:
+                return "None"
+            elif _gm == 1:
+                return "All Pick"
+            elif _gm == 2:
+                return "Captain's Mode"
+            elif _gm == 3:
+                return "Random Draft"
+            elif _gm == 4:
+                return "Single Draft"
+            elif _gm == 5:
+                return "All Random"
+            elif _gm == 6:
+                return "Intro"
+            elif _gm == 7:
+                return "Diretide"
+            elif _gm == 8:
+                return "Reverse Captain's Mode"
+            elif _gm == 9:
+                return "The Greevliling"
+            elif _gm == 10:
+                return "Tutorial"
+            elif _gm == 11:
+                return "Mid Only"
+            elif _gm == 12:
+                return "Least Played"
+            elif _gm == 13:
+                return "New Player Pool"
+            elif _gm == 14:
+                return "Compendium Matchmaking"
+            elif _gm == 15:
+                return "Custom"
+            elif _gm == 16:
+                return "Captain's Draft"
+            elif _gm == 17:
+                return "Balanced Draft"
+            elif _gm == 18:
+                return "Ability Draft"
+            elif _gm == 19:
+                return "?? EVENT ??"
+            elif _gm == 20:
+                return "All Random Death Match"
+            elif _gm == 21:
+                return "1 vs 1 Solo Mid"
+            elif _gm == 22:
+                return "All Pick"
+            else:
+                return "Unknown"
         else:
-            return "Unknown"
+            return _gm
+
     @property
     def lobby_type(self):
         _type = self._lobby_type
-        if _type == -1:
-            return "invalid"
-        elif _type == 0:
-            return "Public Match Making"
-        elif _type == 1:
-            return "Practice"
-        elif _type == 2:
-            return "Tournament"
-        elif _type == 3:
-            return "Tutorial"
-        elif _type == 4:
-            return "CO-OP with bots"
-        elif _type == 5:
-            return "Team Match Making"
-        elif _type == 6:
-            return "Solo Queue"
-        elif _type == 7:
-            return "Ranked"
-        elif _type == 8:
-            return "Solo Mid 1 vs 1"
+        if isinstance(_type,int):
+            if _type == -1:
+                return "invalid"
+            elif _type == 0:
+                return "Public Match Making"
+            elif _type == 1:
+                return "Practice"
+            elif _type == 2:
+                return "Tournament"
+            elif _type == 3:
+                return "Tutorial"
+            elif _type == 4:
+                return "CO-OP with bots"
+            elif _type == 5:
+                return "Team Match Making"
+            elif _type == 6:
+                return "Solo Queue"
+            elif _type == 7:
+                return "Ranked"
+            elif _type == 8:
+                return "Solo Mid 1 vs 1"
+            else:
+                return "Unknown"
         else:
-            return "Unknown"
+            return _type
 
  
    
@@ -139,9 +146,9 @@ class DotaResultSchema(Schema):
 
 
     lobby_type = fields.String(dump_only=True)
-    _lobby_type = fields.Integer(load_only=True,load_from='lobby_type')
+    _lobby_type = fields.Raw(load_only=True,load_from='lobby_type')
 
-    _game_mode = fields.Integer(load_only=True,load_from='game_mode')
+    _game_mode = fields.Raw(load_only=True,load_from='game_mode')
     game_mode = fields.String(dump_only=True)
     
 

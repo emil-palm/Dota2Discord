@@ -1,0 +1,4 @@
+*** Top5 most played heroes ***
+{{#.}}
+{{index}} - {{name}} - {{count}}
+{{/.}}

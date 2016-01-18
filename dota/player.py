@@ -35,6 +35,10 @@ class Player(Model):
     def hero(self):
         return heroes()[self.hero_id]
 
+    @hero.setter
+    def hero(self,value):
+        pass
+
 class PlayerSchema(Schema):
     account_id = fields.Integer()
 

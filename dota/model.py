@@ -2,7 +2,11 @@ import sys
 class Model(object):
     def __init__(self,*args,**kwargs):
         for (k,v) in iter(kwargs.items()):
-            setattr(self,k,v)
+            try:
+                setattr(self,k,v)
+            except Exception as e:
+                print(k,v)
+               
 
     @classmethod
     def schema(cls,*args,**kwargs):
