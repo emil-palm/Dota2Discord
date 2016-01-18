@@ -13,6 +13,7 @@ It will be polling the STEAMAPI every 10 seconds asking for new Dota2 games play
 * !g - Gives you some dota2 stats about the last game played by sending user.
 * !g DISCORDUSER - gives you info about that discord nicknames last game. Also works with mentions and without
 * !unregister - Removes the steamid for the sending user.
+* !top5 [player|hero] - Gives you a top list based of recorded games
 
 ### Setup
 Create a file called evilbot.json in the cloned repository.
